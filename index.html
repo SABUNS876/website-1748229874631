@@ -1,0 +1,2740 @@
+
+<html lang="id">
+
+<head>
+
+ 
+<meta charset="UTF-8">
+
+ 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+ 
+<title>
+YT DL Python - Beli Role Premium
+</title>
+
+ 
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+
+ 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+ 
+<style>
+
+ :root {
+ --primary: #6366f1;
+ --primary-dark: #4f46e5;
+ --primary-light: #a5b4fc;
+ --secondary: #10b981;
+ --secondary-dark: #059669;
+ --accent: #f59e0b;
+ --dark: #1e293b;
+ --light: #f8fafc;
+ --gray: #64748b;
+ --light-gray: #e2e8f0;
+ --danger: #ef4444;
+ --success: #10b981;
+ --warning: #f59e0b;
+ --info: #3b82f6;
+ }
+ 
+ * {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ font-family: 'Poppins', sans-serif;
+ }
+ 
+ html, body {
+ overflow-x: hidden;
+ width: 100%
+ position: relative;
+ scroll-behavior: smooth;
+ }
+ 
+ body {
+ background-color: #f1f5f9;
+ color: var(--dark);
+ line-height: 1.6;
+ min-height: 100vh;
+ }
+ 
+ .container {
+ width: 100%
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 20px;
+ position: relative;
+ }
+ 
+ header {
+ background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+ color: white;
+ padding: 3rem 2rem;
+ text-align: center;
+ border-radius: 16px;
+ margin-bottom: 2rem;
+ box-shadow: 0 10px 25px rgba(99, 102, 241, 0.2);
+ position: relative;
+ overflow: hidden;
+ }
+ 
+ header::before {
+ content: '';
+ position: absolute;
+ top: -50%
+ left: -50%
+ width: 200%
+ height: 200%
+ background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 60%);
+ transform: rotate(30deg);
+ }
+ 
+ header h1 {
+ font-size: clamp(1.8rem, 5vw, 2.8rem);
+ margin-bottom: 1rem;
+ position: relative;
+ text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+ }
+ 
+ header p {
+ font-size: clamp(0.9rem, 3vw, 1.2rem);
+ max-width: 800px;
+ margin: 0 auto;
+ opacity: 0.9;
+ }
+ 
+ .announcement {
+ background-color: white;
+ padding: 2rem;
+ border-radius: 16px;
+ margin-bottom: 2rem;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+ border-left: 5px solid var(--primary);
+ transition: transform 0.3s ease;
+ word-wrap: break-word;
+ overflow-wrap: break-word;
+ }
+ 
+ .announcement:hover {
+ transform: translateY(-5px);
+ }
+ 
+ .announcement h2 {
+ color: var(--primary);
+ margin-bottom: 1rem;
+ display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+ }
+ 
+ .announcement h2 i {
+ margin-right: 10px;
+ }
+ 
+ .section-title {
+ text-align: center;
+ margin-bottom: 2rem;
+ position: relative;
+ padding-bottom: 15px;
+ font-size: clamp(1.5rem, 4vw, 2rem);
+ }
+ 
+ .section-title::after {
+ content: '';
+ position: absolute;
+ bottom: 0;
+ left: 50%
+ transform: translateX(-50%);
+ width: 80px;
+ height: 4px;
+ background: linear-gradient(to right, var(--primary), var(--secondary));
+ border-radius: 2px;
+ }
+ 
+ .packages {
+ display: grid;
+ grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+ gap: 1.5rem;
+ margin-bottom: 3rem;
+ }
+ 
+ .package {
+ background-color: white;
+ border-radius: 16px;
+ padding: 1.5rem;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+ transition: all 0.3s ease;
+ position: relative;
+ overflow: hidden;
+ border: 1px solid var(--light-gray);
+ height: 100%
+ display: flex;
+ flex-direction: column;
+ }
+ 
+ .package::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%
+ height: 5px;
+ background: linear-gradient(to right, var(--primary), var(--secondary));
+ }
+ 
+ .package:hover {
+ transform: translateY(-10px);
+ box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+ }
+ 
+ .package h3 {
+ color: var(--primary);
+ font-size: clamp(1.2rem, 3vw, 1.6rem);
+ margin-bottom: 1.5rem;
+ border-bottom: 2px solid var(--light-gray);
+ padding-bottom: 0.8rem;
+ position: relative;
+ display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+ }
+ 
+ .package h3 i {
+ margin-right: 10px;
+ color: var(--accent);
+ }
+ 
+ .package ul {
+ list-style-type: none;
+ margin-bottom: 1.8rem;
+ flex-grow: 1;
+ }
+ 
+ .package ul li {
+ margin-bottom: 0.8rem;
+ display: flex;
+ align-items: flex-start;
+ padding-left: 5px;
+ font-size: clamp(0.85rem, 2vw, 1rem);
+ }
+ 
+ .package ul li::before {
+ content: "\f00c";
+ font-family: "Font Awesome 6 Free";
+ font-weight: 900;
+ color: var(--secondary);
+ margin-right: 0.8rem;
+ flex-shrink: 0;
+ }
+ 
+ .price-options {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 0.8rem;
+ margin-top: auto;
+ }
+ 
+ .price-option {
+ background-color: var(--light-gray);
+ padding: 0.5rem 1rem;
+ border-radius: 50px;
+ font-size: clamp(0.75rem, 2vw, 0.9rem);
+ cursor: pointer;
+ transition: all 0.2s ease;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ font-weight: 500;
+ margin-bottom: 0.5rem;
+ }
+ 
+ .price-option:hover {
+ background-color: var(--primary);
+ color: white;
+ transform: scale(1.05);
+ }
+ 
+ .price-option.selected {
+ background-color: var(--primary);
+ color: white;
+ }
+ 
+ .purchase-form {
+ background-color: white;
+ border-radius: 16px;
+ padding: 2rem;
+ margin-bottom: 2.5rem;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+ border: 1px solid var(--light-gray);
+ position: relative;
+ overflow: hidden;
+ }
+ 
+ .purchase-form::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%
+ height: 5px;
+ background: linear-gradient(to right, var(--primary), var(--accent));
+ }
+ 
+ .purchase-form h2 {
+ color: var(--primary);
+ margin-bottom: 2rem;
+ display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+ font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+ }
+ 
+ .purchase-form h2 i {
+ margin-right: 10px;
+ color: var(--accent);
+ }
+ 
+ .form-group {
+ margin-bottom: 1.8rem;
+ position: relative;
+ }
+ 
+ .form-group label {
+ display: block;
+ margin-bottom: 0.8rem;
+ font-weight: 500;
+ color: var(--dark);
+ font-size: clamp(0.9rem, 2.5vw, 1rem);
+ }
+ 
+ .form-group input,
+ .form-group select {
+ width: 100%
+ padding: 0.9rem 1rem;
+ border: 2px solid var(--light-gray);
+ border-radius: 8px;
+ font-size: clamp(0.9rem, 2.5vw, 1rem);
+ transition: all 0.2s ease;
+ background-color: var(--light);
+ }
+ 
+ .form-group input:focus,
+ .form-group select:focus {
+ border-color: var(--primary);
+ outline: none;
+ box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+ }
+ 
+ .form-group select {
+ appearance: none;
+ background-image: url("data:image/svg xml,ŵCsvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='�b' viewBox='0 0 16 16'ŵEŵCpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/ŵEŵC/svgŵE");
+ background-repeat: no-repeat;
+ background-position: right 1rem center;
+ background-size: 16px 12px;
+ padding-right: 2.5rem;
+ }
+ 
+ .form-group input[readonly] {
+ background-color: #f8fafc;
+ border-color: #e2e8f0;
+ color: #64748b;
+ cursor: not-allowed;
+ }
+ 
+ .form-group .input-icon {
+ position: absolute;
+ top: 2.8rem;
+ left: 1rem;
+ color: var(--gray);
+ }
+ 
+ .form-group .input-with-icon {
+ padding-left: 2.5rem;
+ }
+ 
+ button {
+ background: linear-gradient(to right, var(--primary), var(--primary-dark));
+ color: white;
+ border: none;
+ padding: 0.9rem 1.5rem;
+ border-radius: 8px;
+ font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+ font-weight: 500;
+ cursor: pointer;
+ transition: all 0.2s ease;
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+ width: auto;
+ white-space: nowrap;
+ }
+ 
+ button:hover {
+ background: linear-gradient(to right, var(--primary-dark), var(--primary));
+ transform: translateY(-2px);
+ box-shadow: 0 6px 15px rgba(79, 70, 229, 0.4);
+ }
+ 
+ button:active {
+ transform: translateY(0);
+ box-shadow: 0 2px 5px rgba(79, 70, 229, 0.4);
+ }
+ 
+ button:focus-visible {
+ outline: 3px solid rgba(99, 102, 241, 0.5);
+ outline-offset: 2px;
+ }
+ 
+ button i {
+ margin-right: 8px;
+ }
+ 
+ .result {
+ background-color: white;
+ border-radius: 16px;
+ padding: 2rem;
+ margin-bottom: 2.5rem;
+ box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+ display: none;
+ border: 1px solid var(--light-gray);
+ position: relative;
+ overflow: hidden;
+ animation: fadeIn 0.5s ease;
+ }
+ 
+ .result::before {
+ content: '';
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%
+ height: 5px;
+ background: linear-gradient(to right, var(--secondary), var(--info));
+ }
+ 
+ .result h2 {
+ color: var(--primary);
+ margin-bottom: 2rem;
+ display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+ font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+ }
+ 
+ .result h2 i {
+ margin-right: 10px;
+ color: var(--info);
+ }
+ 
+ .qr-container {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ margin-bottom: 2.5rem;
+ padding: 2rem;
+ background-color: var(--light);
+ border-radius: 12px;
+ border: 2px dashed var(--light-gray);
+ }
+ 
+ .qr-image {
+ max-width: 100%
+ width: 300px;
+ height: auto;
+ margin-bottom: 1.5rem;
+ border-radius: 10px;
+ box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+ padding: 10px;
+ background-color: white;
+ transition: transform 0.3s ease;
+ }
+ 
+ .qr-image:hover {
+ transform: scale(1.05);
+ }
+ 
+ .qr-container p {
+ font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+ color: var(--gray);
+ text-align: center;
+ }
+ 
+ .payment-details {
+ background-color: var(--light);
+ padding: 1.5rem;
+ border-radius: 12px;
+ margin-bottom: 2rem;
+ width: 100%
+ border: 1px solid var(--light-gray);
+ overflow-x: auto;
+ }
+ 
+ .payment-details p {
+ margin-bottom: 1rem;
+ font-size: clamp(0.85rem, 2.5vw, 1.1rem);
+ display: flex;
+ align-items: center;
+ flex-wrap: wrap;
+ }
+ 
+ .payment-details p:last-child {
+ margin-bottom: 0;
+ }
+ 
+ .payment-details .highlight {
+ font-weight: 600;
+ color: var(--primary);
+ min-width: 150px;
+ display: inline-block;
+ }
+ 
+ .payment-details p i {
+ margin-right: 10px;
+ color: var(--accent);
+ width: 20px;
+ text-align: center;
+ flex-shrink: 0;
+ }
+ 
+ .status-container {
+ margin-top: 2rem;
+ padding: 1.5rem;
+ border-radius: 8px;
+ text-align: center;
+ font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+ font-weight: 500;
+ transition: all 0.3s ease;
+ word-wrap: break-word;
+ overflow-wrap: break-word;
+ }
+ 
+ .status-pending {
+ background-color: #fef3c7;
+ color: #92400e;
+ border-left: 5px solid #f59e0b;
+ }
+ 
+ .status-success {
+ background-color: #d1fae5;
+ color: #065f46;
+ border-left: 5px solid #10b981;
+ }
+ 
+ .status-error {
+ background-color: #fee2e2;
+ color: #b91c1c;
+ border-left: 5px solid #ef4444;
+ }
+ 
+ .loading {
+ display: inline-block;
+ width: 24px;
+ height: 24px;
+ border: 3px solid rgba(255, 255, 255, 0.3);
+ border-radius: 50%
+ border-top-color: var(--primary);
+ animation: spin 1s ease-in-out infinite;
+ margin-right: 10px;
+ vertical-align: middle;
+ }
+ 
+ .button-group {
+ display: flex;
+ gap: 1rem;
+ margin-top: 2rem;
+ flex-wrap: wrap;
+ justify-content: center;
+ }
+ 
+ .button-secondary {
+ background: linear-gradient(to right, var(--secondary), var(--secondary-dark));
+ box-shadow: 0 4px 10px rgba(16, 185, 129, 0.3);
+ }
+ 
+ .button-secondary:hover {
+ background: linear-gradient(to right, var(--secondary-dark), var(--secondary));
+ box-shadow: 0 6px 15px rgba(16, 185, 129, 0.4);
+ }
+ 
+ .button-warning {
+ background: linear-gradient(to right, var(--warning), #d97706);
+ box-shadow: 0 4px 10px rgba(245, 158, 11, 0.3);
+ }
+ 
+ .button-warning:hover {
+ background: linear-gradient(to right, #d97706, var(--warning));
+ box-shadow: 0 6px 15px rgba(245, 158, 11, 0.4);
+ }
+ 
+ .timer-container {
+ display: flex;
+ justify-content: center;
+ margin: 1.5rem 0;
+ }
+ 
+ .timer {
+ display: flex;
+ gap: 1rem;
+ }
+ 
+ .timer-item {
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ background-color: var(--primary);
+ color: white;
+ padding: 0.8rem;
+ border-radius: 8px;
+ min-width: 70px;
+ box-shadow: 0 4px 10px rgba(79, 70, 229, 0.3);
+ }
+ 
+ .timer-value {
+ font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+ font-weight: 700;
+ }
+ 
+ .timer-label {
+ font-size: clamp(0.7rem, 2vw, 0.8rem);
+ text-transform: uppercase;
+ opacity: 0.8;
+ }
+ 
+ .copy-button {
+ background-color: var(--light-gray);
+ border: none;
+ color: var(--dark);
+ padding: 0.4rem 0.8rem;
+ border-radius: 4px;
+ font-size: 0.9rem;
+ cursor: pointer;
+ transition: all 0.2s ease;
+ margin-left: 10px;
+ box-shadow: none;
+ }
+ 
+ .copy-button:hover {
+ background-color: var(--gray);
+ color: white;
+ transform: none;
+ box-shadow: none;
+ }
+ 
+ .tooltip {
+ position: relative;
+ display: inline-block;
+ }
+ 
+ .tooltip .tooltiptext {
+ visibility: hidden;
+ width: 120px;
+ background-color: var(--dark);
+ color: white;
+ text-align: center;
+ border-radius: 6px;
+ padding: 5px;
+ position: absolute;
+ z-index: 1;
+ bottom: 125%
+ left: 50%
+ transform: translateX(-50%);
+ opacity: 0;
+ transition: opacity 0.3s;
+ font-size: 0.8rem;
+ }
+ 
+ .tooltip .tooltiptext::after {
+ content: "";
+ position: absolute;
+ top: 100%
+ left: 50%
+ margin-left: -5px;
+ border-width: 5px;
+ border-style: solid;
+ border-color: var(--dark) transparent transparent transparent;
+ }
+ 
+ .tooltip:hover .tooltiptext {
+ visibility: visible;
+ opacity: 1;
+ }
+ 
+ /* Floating buttons */
+ .floating-buttons {
+ position: fixed;
+ bottom: 20px;
+ right: 20px;
+ display: flex;
+ flex-direction: column;
+ gap: 10px;
+ z-index: 100;
+ }
+ 
+ .floating-button {
+ width: 50px;
+ height: 50px;
+ border-radius: 50%
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ transition: all 0.3s ease;
+ color: white;
+ font-size: 1.2rem;
+ position: relative;
+ }
+ 
+ .floating-button:hover {
+ transform: translateY(-5px);
+ }
+ 
+ .floating-button.whatsapp {
+ background-color: #25D366;
+ }
+ 
+ .floating-button.docs {
+ background-color: var(--info);
+ }
+ 
+ .floating-button.redoc {
+ background-color: #E53E3E;
+ }
+ 
+ .floating-button.accessibility {
+ background-color: var(--dark);
+ }
+ 
+ .floating-button .tooltiptext {
+ visibility: hidden;
+ width: 120px;
+ background-color: var(--dark);
+ color: white;
+ text-align: center;
+ border-radius: 6px;
+ padding: 5px;
+ position: absolute;
+ z-index: 1;
+ right: 120%
+ top: 50%
+ transform: translateY(-50%);
+ opacity: 0;
+ transition: opacity 0.3s;
+ font-size: 0.8rem;
+ }
+ 
+ .floating-button .tooltiptext::after {
+ content: "";
+ position: absolute;
+ top: 50%
+ left: 100%
+ margin-top: -5px;
+ border-width: 5px;
+ border-style: solid;
+ border-color: transparent transparent transparent var(--dark);
+ }
+ 
+ .floating-button:hover .tooltiptext {
+ visibility: visible;
+ opacity: 1;
+ }
+ 
+ /* Accessibility menu */
+ .accessibility-menu {
+ position: fixed;
+ bottom: 80px;
+ right: 20px;
+ background-color: white;
+ border-radius: 12px;
+ box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+ padding: 1rem;
+ z-index: 99;
+ width: 250px;
+ display: none;
+ animation: fadeIn 0.3s ease;
+ }
+ 
+ .accessibility-menu.show {
+ display: block;
+ }
+ 
+ .accessibility-menu h3 {
+ color: var(--dark);
+ margin-bottom: 1rem;
+ font-size: 1.1rem;
+ border-bottom: 1px solid var(--light-gray);
+ padding-bottom: 0.5rem;
+ }
+ 
+ .accessibility-option {
+ display: flex;
+ align-items: center;
+ margin-bottom: 0.8rem;
+ }
+ 
+ .accessibility-option:last-child {
+ margin-bottom: 0;
+ }
+ 
+ .accessibility-option label {
+ margin-left: 0.5rem;
+ font-size: 0.9rem;
+ cursor: pointer;
+ }
+ 
+ .accessibility-option input {
+ cursor: pointer;
+ }
+ 
+ /* High contrast mode */
+ body.high-contrast {
+ background-color: #000;
+ color: #fff;
+ }
+ 
+ body.high-contrast .package,
+ body.high-contrast .announcement,
+ body.high-contrast .purchase-form,
+ body.high-contrast .result,
+ body.high-contrast .accessibility-menu {
+ background-color: #000;
+ color: #fff;
+ border-color: #fff;
+ }
+ 
+ body.high-contrast .package h3,
+ body.high-contrast .announcement h2,
+ body.high-contrast .purchase-form h2,
+ body.high-contrast .result h2,
+ body.high-contrast .accessibility-menu h3 {
+ color: #fff;
+ }
+ 
+ body.high-contrast .form-group input,
+ body.high-contrast .form-group select {
+ background-color: #000;
+ color: #fff;
+ border-color: #fff;
+ }
+ 
+ body.high-contrast .payment-details {
+ background-color: #000;
+ color: #fff;
+ }
+ 
+ body.high-contrast .payment-details .highlight {
+ color: #fff;
+ }
+ 
+ /* Large text mode */
+ body.large-text {
+ font-size: 120%
+ }
+ 
+ body.large-text h1 {
+ font-size: 3.2rem;
+ }
+ 
+ body.large-text h2 {
+ font-size: 2.4rem;
+ }
+ 
+ body.large-text h3 {
+ font-size: 2rem;
+ }
+ 
+ body.large-text p, 
+ body.large-text li, 
+ body.large-text label {
+ font-size: 1.2rem;
+ }
+ 
+ body.large-text button {
+ font-size: 1.2rem;
+ }
+ 
+ /* Reduced motion */
+ body.reduced-motion * {
+ animation: none !important;
+ transition: none !important;
+ transform: none !important;
+ }
+ 
+ /* Back to top button */
+ .back-to-top {
+ position: fixed;
+ bottom: 20px;
+ left: 20px;
+ width: 50px;
+ height: 50px;
+ border-radius: 50%
+ background-color: var(--primary);
+ color: white;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ cursor: pointer;
+ box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+ opacity: 0;
+ visibility: hidden;
+ transition: all 0.3s ease;
+ z-index: 100;
+ }
+ 
+ .back-to-top.show {
+ opacity: 1;
+ visibility: visible;
+ }
+ 
+ .back-to-top:hover {
+ background-color: var(--primary-dark);
+ transform: translateY(-5px);
+ }
+ 
+ @keyframes spin {
+ to {
+ transform: rotate(360deg);
+ }
+ }
+ 
+ @keyframes fadeIn {
+ from {
+ opacity: 0;
+ transform: translateY(20px);
+ }
+ to {
+ opacity: 1;
+ transform: translateY(0);
+ }
+ }
+ 
+ @keyframes pulse {
+ 0% {
+ box-shadow: 0 0 0 0 rgba(99, 102, 241, 0.4);
+ }
+ 70% {
+ box-shadow: 0 0 0 10px rgba(99, 102, 241, 0);
+ }
+ 100% {
+ box-shadow: 0 0 0 0 rgba(99, 102, 241, 0);
+ }
+ }
+ 
+ .pulse {
+ animation: pulse 2s infinite;
+ }
+ 
+ /* Skip to content link for accessibility */
+ .skip-link {
+ position: absolute;
+ top: -40px;
+ left: 0;
+ background: var(--primary);
+ color: white;
+ padding: 8px;
+ z-index: 100;
+ transition: top 0.3s;
+ }
+ 
+ .skip-link:focus {
+ top: 0;
+ }
+ 
+ /* Extra small devices */
+ @media (max-width: 480px) {
+ .container {
+ padding: 15px;
+ }
+ 
+ header {
+ padding: 2rem 1rem;
+ }
+ 
+ .package {
+ padding: 1.2rem;
+ }
+ 
+ .purchase-form, .result {
+ padding: 1.5rem;
+ }
+ 
+ .qr-container {
+ padding: 1rem;
+ }
+ 
+ .payment-details {
+ padding: 1rem;
+ }
+ 
+ .timer-item {
+ min-width: 60px;
+ padding: 0.6rem;
+ }
+ 
+ .button-group {
+ flex-direction: column;
+ width: 100%
+ }
+ 
+ .button-group button {
+ width: 100%
+ }
+ 
+ .floating-buttons {
+ bottom: 10px;
+ right: 10px;
+ }
+ 
+ .floating-button {
+ width: 45px;
+ height: 45px;
+ font-size: 1rem;
+ }
+ 
+ .accessibility-menu {
+ width: 220px;
+ right: 10px;
+ }
+ }
+ 
+ /* Small devices */
+ @media (max-width: 768px) {
+ .packages {
+ grid-template-columns: 1fr;
+ }
+ 
+ .payment-details .highlight {
+ min-width: 120px;
+ }
+ 
+ .button-group {
+ gap: 0.8rem;
+ }
+ }
+ 
+ /* Medium devices */
+ @media (min-width: 769px) and (max-width: 992px) {
+ .packages {
+ grid-template-columns: repeat(2, 1fr);
+ }
+ }
+ 
+ /* Large devices */
+ @media (min-width: 993px) {
+ .packages {
+ grid-template-columns: repeat(3, 1fr);
+ }
+ }
+ 
+</style>
+
+
+</head>
+
+
+<body>
+
+ 
+<!-- Skip to content link for accessibility -->
+
+ 
+<a href="#main-content" class="skip-link">
+Skip to content
+</a>
+
+ 
+ 
+<div class="container">
+
+ 
+<header>
+
+ 
+<h1>
+
+<i class="fas fa-rocket" aria-hidden="true">
+
+</i>
+ YT DL Python - Beli Role Premium
+</h1>
+
+ 
+<p>
+Tingkatkan pengalaman unduhan video Anda dengan berbagai paket keanggotaan premium
+</p>
+
+ 
+</header>
+
+ 
+ 
+<main id="main-content">
+
+ 
+<section class="announcement" aria-labelledby="announcement-title">
+
+ 
+<h2 id="announcement-title">
+
+<i class="fas fa-bullhorn" aria-hidden="true">
+
+</i>
+ Halo Semua!
+</h2>
+
+ 
+<p>
+Sekarang ada update terbaru tentang 
+<a href="https://ytdlpyton.nvlgroup.my.id/" target="_blank">
+https://ytdlpyton.nvlgroup.my.id/
+</a>
+. Yaitu penambahan role dan pembatasan. Dapat membeli role di API Docs, tepatnya endpoint 
+<code>
+/topup/qris
+</code>
+. Jangan lupa masukkan ID Pay yang sesuai.
+</p>
+
+ 
+<br>
+
+ 
+<h3>
+Pilih Paket yang Sesuai dengan Kebutuhanmu!
+</h3>
+
+ 
+<p>
+Kami menyediakan berbagai pilihan keanggotaan dengan harga fleksibel, resolusi yang disesuaikan, dan batas unduhan optimal. Setiap level memiliki keuntungan tersendiri untuk memastikan pengalaman terbaik bagi semua pengguna.
+</p>
+
+ 
+</section>
+
+ 
+ 
+<h2 class="section-title" id="packages-title">
+Paket Keanggotaan
+</h2>
+
+ 
+ 
+<section class="packages" aria-labelledby="packages-title">
+
+ 
+<div class="package">
+
+ 
+<h3>
+
+<i class="fas fa-user" aria-hidden="true">
+
+</i>
+ Petualang Gratis
+</h3>
+
+ 
+<ul>
+
+ 
+<li>
+Gratis untuk semua pengguna
+</li>
+
+ 
+<li>
+Resolusi 720p HD
+</li>
+
+ 
+<li>
+Batas unduhan maksimum 150MB per file
+</li>
+
+ 
+<li>
+10 RPM
+</li>
+
+ 
+</ul>
+
+ 
+<div class="price-options">
+
+ 
+<span class="price-option">
+Gratis
+</span>
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<div class="package">
+
+ 
+<h3>
+
+<i class="fas fa-compass" aria-hidden="true">
+
+</i>
+ Pencari Awal
+</h3>
+
+ 
+<ul>
+
+ 
+<li>
+Resolusi 720p HD
+</li>
+
+ 
+<li>
+Batas unduhan hingga 300MB per file
+</li>
+
+ 
+<li>
+20 RPM
+</li>
+
+ 
+</ul>
+
+ 
+<div class="price-options">
+
+ 
+<span class="price-option" data-role="pencariawal1" data-days="1" data-price="100">
+Rp100/hari
+</span>
+
+ 
+<span class="price-option" data-role="pencariawal3" data-days="3" data-price="300">
+Rp300/3 hari
+</span>
+
+ 
+<span class="price-option" data-role="pencariawal7" data-days="7" data-price="500">
+Rp500/7 hari
+</span>
+
+ 
+<span class="price-option" data-role="pencariawal14" data-days="14" data-price="1000">
+Rp1.000/14 hari
+</span>
+
+ 
+<span class="price-option" data-role="pencariawal30" data-days="30" data-price="2000">
+Rp2.000/bulan
+</span>
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<div class="package">
+
+ 
+<h3>
+
+<i class="fas fa-map" aria-hidden="true">
+
+</i>
+ Penjelajah Muda
+</h3>
+
+ 
+<ul>
+
+ 
+<li>
+Resolusi 1080p Full HD
+</li>
+
+ 
+<li>
+Batas unduhan hingga 500MB per file
+</li>
+
+ 
+<li>
+30 RPM
+</li>
+
+ 
+</ul>
+
+ 
+<div class="price-options">
+
+ 
+<span class="price-option" data-role="penjelajahmuda1" data-days="1" data-price="250">
+Rp250/hari
+</span>
+
+ 
+<span class="price-option" data-role="penjelajahmuda3" data-days="3" data-price="700">
+Rp700/3 hari
+</span>
+
+ 
+<span class="price-option" data-role="penjelajahmuda7" data-days="7" data-price="1000">
+Rp1000/7 hari
+</span>
+
+ 
+<span class="price-option" data-role="penjelajahmuda14" data-days="14" data-price="1500">
+Rp1.500/14 hari
+</span>
+
+ 
+<span class="price-option" data-role="penjelajahmuda30" data-days="30" data-price="3000">
+Rp3.000/bulan
+</span>
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<div class="package">
+
+ 
+<h3>
+
+<i class="fas fa-crown" aria-hidden="true">
+
+</i>
+ Master Pro
+</h3>
+
+ 
+<ul>
+
+ 
+<li>
+Resolusi 1440p Quad HD
+</li>
+
+ 
+<li>
+Batas unduhan hingga 750MB per file
+</li>
+
+ 
+<li>
+45 RPM
+</li>
+
+ 
+</ul>
+
+ 
+<div class="price-options">
+
+ 
+<span class="price-option" data-role="masterpro1" data-days="1" data-price="500">
+Rp500/hari
+</span>
+
+ 
+<span class="price-option" data-role="masterpro3" data-days="3" data-price="1000">
+Rp1000/3 hari
+</span>
+
+ 
+<span class="price-option" data-role="masterpro7" data-days="7" data-price="2000">
+Rp2000/7 hari
+</span>
+
+ 
+<span class="price-option" data-role="masterpro14" data-days="14" data-price="3000">
+Rp3000/14 hari
+</span>
+
+ 
+<span class="price-option" data-role="masterpro30" data-days="30" data-price="5000">
+Rp5.000/bulan
+</span>
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<div class="package">
+
+ 
+<h3>
+
+<i class="fas fa-chess-knight" aria-hidden="true">
+
+</i>
+ Strategis Elit
+</h3>
+
+ 
+<ul>
+
+ 
+<li>
+Resolusi 2160p 4K UHD
+</li>
+
+ 
+<li>
+Batas unduhan hingga 900MB per file
+</li>
+
+ 
+<li>
+60 RPM
+</li>
+
+ 
+</ul>
+
+ 
+<div class="price-options">
+
+ 
+<span class="price-option" data-role="strategiselit1" data-days="1" data-price="750">
+Rp750/hari
+</span>
+
+ 
+<span class="price-option" data-role="strategiselit3" data-days="3" data-price="1500">
+Rp1500/3 hari
+</span>
+
+ 
+<span class="price-option" data-role="strategiselit7" data-days="7" data-price="2500">
+Rp2.500/7 hari
+</span>
+
+ 
+<span class="price-option" data-role="strategiselit14" data-days="14" data-price="5000">
+Rp5.000/14 hari
+</span>
+
+ 
+<span class="price-option" data-role="strategiselit30" data-days="30" data-price="7500">
+Rp7.500/bulan
+</span>
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<div class="package">
+
+ 
+<h3>
+
+<i class="fas fa-gem" aria-hidden="true">
+
+</i>
+ Visioner Legendaris
+</h3>
+
+ 
+<ul>
+
+ 
+<li>
+Resolusi 2160p 4K UHD
+</li>
+
+ 
+<li>
+Batas unduhan hingga 1100MB per file
+</li>
+
+ 
+<li>
+85 RPM
+</li>
+
+ 
+</ul>
+
+ 
+<div class="price-options">
+
+ 
+<span class="price-option" data-role="visionerlegendaris1" data-days="1" data-price="1000">
+Rp1000/hari
+</span>
+
+ 
+<span class="price-option" data-role="visionerlegendaris3" data-days="3" data-price="2000">
+Rp2.000/3 hari
+</span>
+
+ 
+<span class="price-option" data-role="visionerlegendaris7" data-days="7" data-price="4000">
+Rp4.000/7 hari
+</span>
+
+ 
+<span class="price-option" data-role="visionerlegendaris14" data-days="14" data-price="6500">
+Rp6.500/14 hari
+</span>
+
+ 
+<span class="price-option" data-role="visionerlegendaris30" data-days="30" data-price="10000">
+Rp10.000/bulan
+</span>
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<div class="package">
+
+ 
+<h3>
+
+<i class="fas fa-chess-king" aria-hidden="true">
+
+</i>
+ Penguasa Tertinggi
+</h3>
+
+ 
+<ul>
+
+ 
+<li>
+Resolusi 4320p 8K UHD
+</li>
+
+ 
+<li>
+Batas unduhan hingga 1300MB per file
+</li>
+
+ 
+<li>
+Unlimited request
+</li>
+
+ 
+<li>
+Free 1 IP tambahan
+</li>
+
+ 
+</ul>
+
+ 
+<div class="price-options">
+
+ 
+<span class="price-option" data-role="penguasa1" data-days="1" data-price="1500">
+Rp1500/hari
+</span>
+
+ 
+<span class="price-option" data-role="penguasa3" data-days="3" data-price="3000">
+Rp3.000/3 hari
+</span>
+
+ 
+<span class="price-option" data-role="penguasa7" data-days="7" data-price="6000">
+Rp6.000/7 hari
+</span>
+
+ 
+<span class="price-option" data-role="penguasa14" data-days="14" data-price="10000">
+Rp10.000/14 hari
+</span>
+
+ 
+<span class="price-option" data-role="penguasa30" data-days="30" data-price="15000">
+Rp15.000/bulan
+</span>
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+</section>
+
+ 
+ 
+<section class="purchase-form" aria-labelledby="purchase-title">
+
+ 
+<h2 id="purchase-title">
+
+<i class="fas fa-shopping-cart" aria-hidden="true">
+
+</i>
+ Beli Role Sekarang
+</h2>
+
+ 
+<form id="roleForm">
+
+ 
+<div class="form-group">
+
+ 
+<label for="idpay">
+ID Pay 
+<span style="color: var(--danger);">
+*
+</span>
+
+</label>
+
+ 
+<div style="position: relative;">
+
+ 
+<i class="fas fa-id-card input-icon" aria-hidden="true">
+
+</i>
+
+ 
+<input type="text" id="idpay" name="idpay" class="input-with-icon" placeholder="Masukkan ID Pay Anda" required="" aria-required="true">
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<div class="form-group">
+
+ 
+<label for="ip">
+IP Address 
+<span style="color: var(--danger);">
+*
+</span>
+
+</label>
+
+ 
+<div style="position: relative;">
+
+ 
+<i class="fas fa-network-wired input-icon" aria-hidden="true">
+
+</i>
+
+ 
+<input type="text" id="ip" name="ip" class="input-with-icon" placeholder="Masukkan IP Address Anda" required="" aria-required="true">
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<div class="form-group">
+
+ 
+<label for="wa">
+Nomor WhatsApp 
+<span style="color: var(--danger);">
+*
+</span>
+
+</label>
+
+ 
+<div style="position: relative;">
+
+ 
+<i class="fab fa-whatsapp input-icon" aria-hidden="true">
+
+</i>
+
+ 
+<input type="tel" id="wa" name="wa" class="input-with-icon" placeholder="Contoh: 6285336580720" required="" aria-required="true">
+
+ 
+</div>
+
+ 
+<small style="color: var(--gray); font-size: 0.85rem; margin-top: 0.5rem; display: block;">
+
+ Format: 62 diikuti nomor tanpa 0 di depan (contoh: 6285336580720)
+ 
+</small>
+
+ 
+</div>
+
+ 
+ 
+<div class="form-group">
+
+ 
+<label for="role">
+Role 
+<span style="color: var(--danger);">
+*
+</span>
+
+</label>
+
+ 
+<select id="role" name="role" required="" aria-required="true">
+
+ 
+<option value="" disabled="" selected="">
+Pilih Role
+</option>
+
+ 
+<optgroup label="Pencari Awal">
+
+ 
+<option value="pencariawal1">
+Pencari Awal - 1 Hari
+</option>
+
+ 
+<option value="pencariawal3">
+Pencari Awal - 3 Hari
+</option>
+
+ 
+<option value="pencariawal7">
+Pencari Awal - 7 Hari
+</option>
+
+ 
+<option value="pencariawal14">
+Pencari Awal - 14 Hari
+</option>
+
+ 
+<option value="pencariawal30">
+Pencari Awal - 30 Hari
+</option>
+
+ 
+</optgroup>
+
+ 
+<optgroup label="Penjelajah Muda">
+
+ 
+<option value="penjelajahmuda1">
+Penjelajah Muda - 1 Hari
+</option>
+
+ 
+<option value="penjelajahmuda3">
+Penjelajah Muda - 3 Hari
+</option>
+
+ 
+<option value="penjelajahmuda7">
+Penjelajah Muda - 7 Hari
+</option>
+
+ 
+<option value="penjelajahmuda14">
+Penjelajah Muda - 14 Hari
+</option>
+
+ 
+<option value="penjelajahmuda30">
+Penjelajah Muda - 30 Hari
+</option>
+
+ 
+</optgroup>
+
+ 
+<optgroup label="Master Pro">
+
+ 
+<option value="masterpro1">
+Master Pro - 1 Hari
+</option>
+
+ 
+<option value="masterpro3">
+Master Pro - 3 Hari
+</option>
+
+ 
+<option value="masterpro7">
+Master Pro - 7 Hari
+</option>
+
+ 
+<option value="masterpro14">
+Master Pro - 14 Hari
+</option>
+
+ 
+<option value="masterpro30">
+Master Pro - 30 Hari
+</option>
+
+ 
+</optgroup>
+
+ 
+<optgroup label="Strategis Elit">
+
+ 
+<option value="strategiselit1">
+Strategis Elit - 1 Hari
+</option>
+
+ 
+<option value="strategiselit3">
+Strategis Elit - 3 Hari
+</option>
+
+ 
+<option value="strategiselit7">
+Strategis Elit - 7 Hari
+</option>
+
+ 
+<option value="strategiselit14">
+Strategis Elit - 14 Hari
+</option>
+
+ 
+<option value="strategiselit30">
+Strategis Elit - 30 Hari
+</option>
+
+ 
+</optgroup>
+
+ 
+<optgroup label="Visioner Legendaris">
+
+ 
+<option value="visionerlegendaris1">
+Visioner Legendaris - 1 Hari
+</option>
+
+ 
+<option value="visionerlegendaris3">
+Visioner Legendaris - 3 Hari
+</option>
+
+ 
+<option value="visionerlegendaris7">
+Visioner Legendaris - 7 Hari
+</option>
+
+ 
+<option value="visionerlegendaris14">
+Visioner Legendaris - 14 Hari
+</option>
+
+ 
+<option value="visionerlegendaris30">
+Visioner Legendaris - 30 Hari
+</option>
+
+ 
+</optgroup>
+
+ 
+<optgroup label="Penguasa Tertinggi">
+
+ 
+<option value="penguasa1">
+Penguasa Tertinggi - 1 Hari
+</option>
+
+ 
+<option value="penguasa3">
+Penguasa Tertinggi - 3 Hari
+</option>
+
+ 
+<option value="penguasa7">
+Penguasa Tertinggi - 7 Hari
+</option>
+
+ 
+<option value="penguasa14">
+Penguasa Tertinggi - 14 Hari
+</option>
+
+ 
+<option value="penguasa30">
+Penguasa Tertinggi - 30 Hari
+</option>
+
+ 
+</optgroup>
+
+ 
+</select>
+
+ 
+</div>
+
+ 
+ 
+<div class="form-group">
+
+ 
+<label for="price">
+Harga
+</label>
+
+ 
+<div style="position: relative;">
+
+ 
+<i class="fas fa-tag input-icon" aria-hidden="true">
+
+</i>
+
+ 
+<input type="text" id="price" name="price" class="input-with-icon" readonly="" aria-readonly="true">
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<button type="submit" id="submitBtn">
+
+<i class="fas fa-qrcode" aria-hidden="true">
+
+</i>
+ Buat Pembayaran QRIS
+</button>
+
+ 
+</form>
+
+ 
+</section>
+
+ 
+ 
+<section class="result" id="resultSection" aria-labelledby="payment-title">
+
+ 
+<h2 id="payment-title">
+
+<i class="fas fa-credit-card" aria-hidden="true">
+
+</i>
+ Pembayaran QRIS
+</h2>
+
+ 
+ 
+<div class="timer-container" aria-label="Waktu tersisa untuk pembayaran">
+
+ 
+<div class="timer" id="paymentTimer">
+
+ 
+<div class="timer-item">
+
+ 
+<span class="timer-value" id="minutes">
+15
+</span>
+
+ 
+<span class="timer-label">
+Menit
+</span>
+
+ 
+</div>
+
+ 
+<div class="timer-item">
+
+ 
+<span class="timer-value" id="seconds">
+00
+</span>
+
+ 
+<span class="timer-label">
+Detik
+</span>
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<div class="qr-container pulse">
+
+ 
+<img id="qrImage" class="qr-image" src="/placeholder.svg" alt="QRIS Code untuk pembayaran">
+
+ 
+<p>
+Scan QR code di atas untuk melakukan pembayaran
+</p>
+
+ 
+<p style="margin-top: 10px; font-size: 0.9rem; color: var(--danger);">
+Pembayaran akan kadaluarsa dalam 
+<span id="timerText">
+15:00
+</span>
+
+</p>
+
+ 
+</div>
+
+ 
+ 
+<div class="payment-details">
+
+ 
+<p>
+
+<i class="fas fa-id-card" aria-hidden="true">
+
+</i>
+ 
+<span class="highlight">
+ID Pay:
+</span>
+ 
+<span id="resultIdpay">
+
+</span>
+ 
+ 
+<button class="copy-button tooltip" onclick="copyToClipboard('resultIdpay')" aria-label="Salin ID Pay">
+
+ 
+<span class="tooltiptext" id="idpayTooltip">
+Salin ID Pay
+</span>
+
+ 
+<i class="fas fa-copy" aria-hidden="true">
+
+</i>
+
+ 
+</button>
+
+ 
+</p>
+
+ 
+<p>
+
+<i class="fas fa-user-tag" aria-hidden="true">
+
+</i>
+ 
+<span class="highlight">
+Role:
+</span>
+ 
+<span id="resultRole">
+
+</span>
+
+</p>
+
+ 
+<p>
+
+<i class="fas fa-calendar-alt" aria-hidden="true">
+
+</i>
+ 
+<span class="highlight">
+Masa Aktif:
+</span>
+ 
+<span id="resultDuration">
+
+</span>
+
+</p>
+
+ 
+<p>
+
+<i class="fas fa-network-wired" aria-hidden="true">
+
+</i>
+ 
+<span class="highlight">
+IP Address:
+</span>
+ 
+<span id="resultIp">
+
+</span>
+
+</p>
+
+ 
+<p>
+
+<i class="fas fa-money-bill-wave" aria-hidden="true">
+
+</i>
+ 
+<span class="highlight">
+Total Pembayaran:
+</span>
+ Rp
+<span id="resultPrice">
+
+</span>
+
+</p>
+
+ 
+</div>
+
+ 
+ 
+<div class="status-container status-pending" id="statusContainer" aria-live="polite">
+
+ 
+<p>
+
+<span class="loading" aria-hidden="true">
+
+</span>
+ Menunggu pembayaran...
+</p>
+
+ 
+</div>
+
+ 
+ 
+<div class="button-group">
+
+ 
+<button id="checkStatusBtn" class="button-secondary">
+
+<i class="fas fa-sync-alt" aria-hidden="true">
+
+</i>
+ Cek Status Pembayaran
+</button>
+
+ 
+<button id="newPaymentBtn" class="button-warning">
+
+<i class="fas fa-plus-circle" aria-hidden="true">
+
+</i>
+ Buat Pembayaran Baru
+</button>
+
+ 
+</div>
+
+ 
+</section>
+
+ 
+</main>
+
+ 
+</div>
+
+ 
+ 
+<!-- Floating buttons -->
+
+ 
+<div class="floating-buttons">
+
+ 
+<a href="https://wa.me/6285336580720" class="floating-button whatsapp" aria-label="Hubungi kami via WhatsApp">
+
+ 
+<i class="fab fa-whatsapp" aria-hidden="true">
+
+</i>
+
+ 
+<span class="tooltiptext">
+Hubungi Support
+</span>
+
+ 
+</a>
+
+ 
+<a href="/docs" class="floating-button docs" aria-label="Lihat dokumentasi">
+
+ 
+<i class="fas fa-book" aria-hidden="true">
+
+</i>
+
+ 
+<span class="tooltiptext">
+Dokumentasi
+</span>
+
+ 
+</a>
+
+ 
+<a href="/redoc" class="floating-button redoc" aria-label="Lihat ReDoc">
+
+ 
+<i class="fas fa-file-alt" aria-hidden="true">
+
+</i>
+
+ 
+<span class="tooltiptext">
+ReDoc
+</span>
+
+ 
+</a>
+
+ 
+<button id="accessibilityBtn" class="floating-button accessibility" aria-label="Buka menu aksesibilitas">
+
+ 
+<i class="fas fa-universal-access" aria-hidden="true">
+
+</i>
+
+ 
+<span class="tooltiptext">
+Aksesibilitas
+</span>
+
+ 
+</button>
+
+ 
+</div>
+
+ 
+ 
+<!-- Accessibility menu -->
+
+ 
+<div class="accessibility-menu" id="accessibilityMenu" aria-labelledby="accessibility-title">
+
+ 
+<h3 id="accessibility-title">
+Menu Aksesibilitas
+</h3>
+
+ 
+<div class="accessibility-option">
+
+ 
+<input type="checkbox" id="highContrast">
+
+ 
+<label for="highContrast">
+Mode Kontras Tinggi
+</label>
+
+ 
+</div>
+
+ 
+<div class="accessibility-option">
+
+ 
+<input type="checkbox" id="largeText">
+
+ 
+<label for="largeText">
+Teks Besar
+</label>
+
+ 
+</div>
+
+ 
+<div class="accessibility-option">
+
+ 
+<input type="checkbox" id="reducedMotion">
+
+ 
+<label for="reducedMotion">
+Kurangi Animasi
+</label>
+
+ 
+</div>
+
+ 
+</div>
+
+ 
+ 
+<!-- Back to top button -->
+
+ 
+<button class="back-to-top show" id="backToTop" aria-label="Kembali ke atas halaman">
+
+ 
+<i class="fas fa-arrow-up" aria-hidden="true">
+
+</i>
+
+ 
+</button>
+
+ 
+ 
+<script>
+
+ document.addEventListener('DOMContentLoaded', function() {
+ const priceOptions = document.querySelectorAll('.price-option');
+ const roleSelect = document.getElementById('role');
+ const priceInput = document.getElementById('price');
+ const roleForm = document.getElementById('roleForm');
+ const resultSection = document.getElementById('resultSection');
+ const qrImage = document.getElementById('qrImage');
+ const resultIdpay = document.getElementById('resultIdpay');
+ const resultRole = document.getElementById('resultRole');
+ const resultDuration = document.getElementById('resultDuration');
+ const resultIp = document.getElementById('resultIp');
+ const resultPrice = document.getElementById('resultPrice');
+ const statusContainer = document.getElementById('statusContainer');
+ const checkStatusBtn = document.getElementById('checkStatusBtn');
+ const newPaymentBtn = document.getElementById('newPaymentBtn');
+ const accessibilityBtn = document.getElementById('accessibilityBtn');
+ const accessibilityMenu = document.getElementById('accessibilityMenu');
+ const highContrastToggle = document.getElementById('highContrast');
+ const largeTextToggle = document.getElementById('largeText');
+ const reducedMotionToggle = document.getElementById('reducedMotion');
+ const backToTopBtn = document.getElementById('backToTop');
+ 
+ let selectedRole = '';
+ let selectedPrice = '';
+ let checkStatusInterval = null;
+ let currentIdPay = '';
+ let paymentTimer = null;
+ let timeLeft = 15 * 60; // 15 minutes in seconds
+ 
+ // Role price mapping
+ const rolePrices = {
+ 'pencariawal1': 100,
+ 'pencariawal3': 300,
+ 'pencariawal7': 500,
+ 'pencariawal14': 1000,
+ 'pencariawal30': 2000,
+ 'penjelajahmuda1': 250,
+ 'penjelajahmuda3': 700,
+ 'penjelajahmuda7': 1000,
+ 'penjelajahmuda14': 1500,
+ 'penjelajahmuda30': 3000,
+ 'masterpro1': 500,
+ 'masterpro3': 1000,
+ 'masterpro7': 2000,
+ 'masterpro14': 3000,
+ 'masterpro30': 5000,
+ 'strategiselit1': 750,
+ 'strategiselit3': 1500,
+ 'strategiselit7': 2500,
+ 'strategiselit14': 5000,
+ 'strategiselit30': 7500,
+ 'visionerlegendaris1': 1000,
+ 'visionerlegendaris3': 2000,
+ 'visionerlegendaris7': 4000,
+ 'visionerlegendaris14': 6500,
+ 'visionerlegendaris30': 10000,
+ 'penguasa1': 1500,
+ 'penguasa3': 3000,
+ 'penguasa7': 6000,
+ 'penguasa14': 10000,
+ 'penguasa30': 15000
+ };
+ 
+ // Role display names
+ const roleDisplayNames = {
+ 'pencariawal1': 'Pencari Awal - 1 Hari',
+ 'pencariawal3': 'Pencari Awal - 3 Hari',
+ 'pencariawal7': 'Pencari Awal - 7 Hari',
+ 'pencariawal14': 'Pencari Awal - 14 Hari',
+ 'pencariawal30': 'Pencari Awal - 30 Hari',
+ 'penjelajahmuda1': 'Penjelajah Muda - 1 Hari',
+ 'penjelajahmuda3': 'Penjelajah Muda - 3 Hari',
+ 'penjelajahmuda7': 'Penjelajah Muda - 7 Hari',
+ 'penjelajahmuda14': 'Penjelajah Muda - 14 Hari',
+ 'penjelajahmuda30': 'Penjelajah Muda - 30 Hari',
+ 'masterpro1': 'Master Pro - 1 Hari',
+ 'masterpro3': 'Master Pro - 3 Hari',
+ 'masterpro7': 'Master Pro - 7 Hari',
+ 'masterpro14': 'Master Pro - 14 Hari',
+ 'masterpro30': 'Master Pro - 30 Hari',
+ 'strategiselit1': 'Strategis Elit - 1 Hari',
+ 'strategiselit3': 'Strategis Elit - 3 Hari',
+ 'strategiselit7': 'Strategis Elit - 7 Hari',
+ 'strategiselit14': 'Strategis Elit - 14 Hari',
+ 'strategiselit30': 'Strategis Elit - 30 Hari',
+ 'visionerlegendaris1': 'Visioner Legendaris - 1 Hari',
+ 'visionerlegendaris3': 'Visioner Legendaris - 3 Hari',
+ 'visionerlegendaris7': 'Visioner Legendaris - 7 Hari',
+ 'visionerlegendaris14': 'Visioner Legendaris - 14 Hari',
+ 'visionerlegendaris30': 'Visioner Legendaris - 30 Hari',
+ 'penguasa1': 'Penguasa Tertinggi - 1 Hari',
+ 'penguasa3': 'Penguasa Tertinggi - 3 Hari',
+ 'penguasa7': 'Penguasa Tertinggi - 7 Hari',
+ 'penguasa14': 'Penguasa Tertinggi - 14 Hari',
+ 'penguasa30': 'Penguasa Tertinggi - 30 Hari'
+ };
+ 
+ // Handle price option selection
+ priceOptions.forEach(option =>
+ {
+ if (option.dataset.role) {
+ option.addEventListener('click', function() {
+ const role = this.dataset.role;
+ 
+ // Update form selections
+ roleSelect.value = role;
+ 
+ // Highlight selected option
+ priceOptions.forEach(opt =>
+ {
+ opt.classList.remove('selected');
+ });
+ this.classList.add('selected');
+ 
+ // Update price
+ updatePrice();
+ 
+ // Scroll to form
+ document.querySelector('.purchase-form').scrollIntoView({ behavior: 'smooth' });
+ });
+ }
+ });
+ 
+ // Update price when role changes
+ roleSelect.addEventListener('change', function() {
+ updatePrice();
+ 
+ // Highlight the corresponding price option
+ const selectedRole = this.value;
+ priceOptions.forEach(opt =>
+ {
+ opt.classList.remove('selected');
+ if (opt.dataset.role === selectedRole) {
+ opt.classList.add('selected');
+ }
+ });
+ });
+ 
+ function updatePrice() {
+ selectedRole = roleSelect.value;
+ 
+ if (selectedRole) {
+ selectedPrice = rolePrices[selectedRole] || '';
+ priceInput.value = selectedPrice ? `Rp${formatNumber(selectedPrice)}` : '';
+ } else {
+ priceInput.value = '';
+ selectedPrice = '';
+ }
+ }
+ 
+ // Handle form submission
+ roleForm.addEventListener('submit', async function(e) {
+ e.preventDefault();
+ 
+ const idpay = document.getElementById('idpay').value;
+ const ip = document.getElementById('ip').value;
+ const wa = document.getElementById('wa').value;
+ 
+ if (!idpay || !selectedRole || !ip || !wa) {
+ alert('Mohon lengkapi semua field yang diperlukan');
+ return;
+ }
+ 
+ try {
+ document.getElementById('submitBtn').innerHTML = '
+<span class="loading">
+
+</span>
+ Memproses...';
+ document.getElementById('submitBtn').disabled = true;
+ 
+ // Build the URL with query parameters
+ const url = `https://ytdlpyton.nvlgroup.my.id/topup/qris?ip=${encodeURIComponent(ip)}&role=${encodeURIComponent(selectedRole)}&wa=${encodeURIComponent(wa)}&idpay=${encodeURIComponent(idpay)}`;
+ 
+ // Send request to create QRIS payment
+ const response = await fetch(url, {
+ method: 'POST',
+ headers: {
+ 'accept': 'application/json'
+ }
+ });
+ 
+ const responseData = await response.json();
+ 
+ if (!response.ok) {
+ throw new Error(responseData.message || responseData.error || 'Gagal membuat pembayaran QRIS');
+ }
+ 
+ // Display result
+ qrImage.src = responseData.qr_image;
+ resultIdpay.textContent = responseData.idpay;
+ resultRole.textContent = roleDisplayNames[responseData.role] || responseData.role;
+ resultDuration.textContent = responseData.masa_aktif;
+ resultIp.textContent = ip;
+ resultPrice.textContent = formatNumber(responseData.nominal_total);
+ 
+ resultSection.style.display = 'block';
+ resultSection.scrollIntoView({ behavior: 'smooth' });
+ 
+ // Store current ID Pay for status checking
+ currentIdPay = responseData.idpay;
+ 
+ // Reset and start payment timer
+ resetPaymentTimer();
+ 
+ // Start checking payment status
+ checkPaymentStatus(currentIdPay);
+ 
+ // Set interval to check status every 5 seconds
+ if (checkStatusInterval) {
+ clearInterval(checkStatusInterval);
+ }
+ 
+ checkStatusInterval = setInterval(() =>
+ {
+ checkPaymentStatus(currentIdPay);
+ }, 5000);
+ 
+ } catch (error) {
+ // Show error message
+ statusContainer.className = 'status-container status-error';
+ statusContainer.innerHTML = `
+<p>
+
+<i class="fas fa-exclamation-triangle">
+
+</i>
+ Terjadi kesalahan: ${error.message}
+</p>
+`;
+ 
+ alert('Terjadi kesalahan: ' error.message);
+ } finally {
+ document.getElementById('submitBtn').innerHTML = '
+<i class="fas fa-qrcode">
+
+</i>
+ Buat Pembayaran QRIS';
+ document.getElementById('submitBtn').disabled = false;
+ }
+ });
+ 
+ // Check payment status button
+ checkStatusBtn.addEventListener('click', function() {
+ if (currentIdPay) {
+ this.innerHTML = '
+<span class="loading">
+
+</span>
+ Memeriksa...';
+ this.disabled = true;
+ 
+ checkPaymentStatus(currentIdPay).finally(() =>
+ {
+ this.innerHTML = '
+<i class="fas fa-sync-alt">
+
+</i>
+ Cek Status Pembayaran';
+ this.disabled = false;
+ });
+ }
+ });
+ 
+ // New payment button
+ newPaymentBtn.addEventListener('click', function() {
+ // Reset form
+ roleForm.reset();
+ 
+ // Reset selected price options
+ priceOptions.forEach(opt =>
+ {
+ opt.classList.remove('selected');
+ });
+ 
+ // Clear price
+ priceInput.value = '';
+ selectedRole = '';
+ selectedPrice = '';
+ 
+ // Hide result section
+ resultSection.style.display = 'none';
+ 
+ // Clear intervals
+ if (checkStatusInterval) {
+ clearInterval(checkStatusInterval);
+ checkStatusInterval = null;
+ }
+ 
+ if (paymentTimer) {
+ clearInterval(paymentTimer);
+ paymentTimer = null;
+ }
+ 
+ // Scroll to form
+ document.querySelector('.purchase-form').scrollIntoView({ behavior: 'smooth' });
+ });
+ 
+ // Function to check payment status
+ async function checkPaymentStatus(idpay) {
+ try {
+ const response = await fetch(`https://ytdlpyton.nvlgroup.my.id/topup/check/${idpay}`);
+ 
+ const data = await response.json();
+ 
+ if (!response.ok) {
+ throw new Error(data.message || data.error || 'Gagal memeriksa status pembayaran');
+ }
+ 
+ // Update status display
+ if (data.status === 'paid') {
+ statusContainer.className = 'status-container status-success';
+ statusContainer.innerHTML = '
+<p>
+
+<i class="fas fa-check-circle">
+
+</i>
+ Pembayaran berhasil! Role Anda telah diaktifkan.
+</p>
+';
+ 
+ // Stop the pulse animation on QR container
+ document.querySelector('.qr-container').classList.remove('pulse');
+ 
+ // Clear interval if payment is successful
+ if (checkStatusInterval) {
+ clearInterval(checkStatusInterval);
+ checkStatusInterval = null;
+ }
+ 
+ // Clear payment timer
+ if (paymentTimer) {
+ clearInterval(paymentTimer);
+ paymentTimer = null;
+ }
+ 
+ // Hide timer
+ document.querySelector('.timer-container').style.display = 'none';
+ } else {
+ statusContainer.className = 'status-container status-pending';
+ statusContainer.innerHTML = '
+<p>
+
+<span class="loading">
+
+</span>
+ Menunggu pembayaran...
+</p>
+';
+ }
+ 
+ return data;
+ 
+ } catch (error) {
+ statusContainer.className = 'status-container status-error';
+ statusContainer.innerHTML = `
+<p>
+
+<i class="fas fa-exclamation-triangle">
+
+</i>
+ Gagal memeriksa status pembayaran: ${error.message}
+</p>
+`;
+ 
+ throw error;
+ }
+ }
+ 
+ // Function to reset and start payment timer
+ function resetPaymentTimer() {
+ timeLeft = 15 * 60; // 15 minutes in seconds
+ updateTimerDisplay();
+ 
+ if (paymentTimer) {
+ clearInterval(paymentTimer);
+ }
+ 
+ paymentTimer = setInterval(() =>
+ {
+ timeLeft--;
+ updateTimerDisplay();
+ 
+ if (timeLeft 
+<= 0) {
+ clearInterval(paymentTimer);
+ statusContainer.className = 'status-container status-error';
